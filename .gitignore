@@ -1,0 +1,12 @@
+# Local incoming materials for analysis. Do not publish raw working docs by default.
+all docs for project/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log

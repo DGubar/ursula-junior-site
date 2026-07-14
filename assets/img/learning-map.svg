@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title desc">
+  <title id="title">Схема образовательной программы</title>
+  <desc id="desc">Три карточки уроков соединены линией прогресса.</desc>
+  <rect width="640" height="520" rx="34" fill="#eaf1ff"/>
+  <circle cx="520" cy="80" r="78" fill="#ffdd99"/>
+  <path d="M102 405C180 267 292 253 365 161c50-64 115-82 182-54" fill="none" stroke="#3157d5" stroke-width="18" stroke-linecap="round"/>
+  <g fill="#fff" stroke="#d9e1ef" stroke-width="4">
+    <rect x="74" y="330" width="180" height="108" rx="24"/>
+    <rect x="230" y="204" width="180" height="108" rx="24"/>
+    <rect x="386" y="76" width="180" height="108" rx="24"/>
+  </g>
+  <g fill="#3157d5" font-family="Arial, sans-serif" font-weight="700">
+    <text x="116" y="374" font-size="24">Урок 1</text>
+    <text x="272" y="248" font-size="24">Урок 2</text>
+    <text x="428" y="120" font-size="24">Урок 3</text>
+  </g>
+  <g fill="#657186" font-family="Arial, sans-serif" font-size="18">
+    <text x="116" y="404">идея</text>
+    <text x="272" y="278">структура</text>
+    <text x="428" y="150">источники</text>
+  </g>
+</svg>

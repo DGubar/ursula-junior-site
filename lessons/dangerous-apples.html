@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Опасные яблоки | Разбор игры</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html">Урсула: 3D-игры</a>
+      <button class="menu-button" id="menuButton" type="button">Меню</button>
+      <nav class="site-nav" id="siteNav">
+        <a href="../index.html">Главная</a>
+        <a href="../learn/index.html">Уроки</a>
+        <a href="../materials/index.html">Материалы</a>
+      </nav>
+    </header>
+
+    <main class="lesson-layout">
+      <aside class="lesson-nav">
+        <span>Курс</span>
+        <a href="lesson-01.html">1. Урсула</a>
+        <a href="lesson-02.html">2. Объекты сцены</a>
+        <a href="lesson-03.html">3. ПРИМС</a>
+        <a href="prims-recipes.html">4. Рецепты</a>
+        <a class="active" href="dangerous-apples.html">5. Опасные яблоки</a>
+      </aside>
+
+      <article class="lesson-content lesson-content--wide">
+        <p class="eyebrow">Часть 2 курса</p>
+        <h1>Разбор игры «Опасные яблоки»</h1>
+        <p class="lead">Это пример готовой мини-игры, где ПРИМС управляет логикой объектов, а Ink-сценарий показывает реплики и объясняет игроку, что происходит.</p>
+
+        <h2>Квестовая цепочка</h2>
+        <ol class="timeline">
+          <li><strong>Ёж:</strong> игрок разговаривает с NPC и узнает про ключ.</li>
+          <li><strong>Ключ:</strong> становится доступен после переменной <code>know_key</code>.</li>
+          <li><strong>Первые ворота:</strong> открываются, если есть <code>has_key</code>.</li>
+          <li><strong>Зеленое яблоко:</strong> подбирается и ставит <code>has_apple = true</code>.</li>
+          <li><strong>Ёж:</strong> получает яблоко и ставит <code>ezh_fed = true</code>.</li>
+          <li><strong>Робот Лиза:</strong> после кормления ежа направляет игрока к кнопке.</li>
+          <li><strong>Кнопка:</strong> активирует <code>btn_active = true</code>.</li>
+          <li><strong>Робот Лиза:</strong> подает сигнал <code>gate_open = true</code>.</li>
+          <li><strong>Финальные ворота:</strong> открываются.</li>
+          <li><strong>Флаг:</strong> взаимодействие с ним вызывает победу.</li>
+        </ol>
+
+        <h2>Диаграммы игры</h2>
+        <div class="recipe-grid recipe-grid--two">
+          <article class="recipe-card"><img class="diagram-shot" src="../all%20docs%20for%20project/ezh_198.png" alt="Диаграмма ezh_198" /><h3>ezh_198</h3><p>Ёж выдает информацию о ключе, ждет яблоко и после кормления открывает следующий этап квеста.</p></article>
+          <article class="recipe-card"><img class="diagram-shot" src="../all%20docs%20for%20project/gold_key_198.png" alt="Диаграмма gold_key_198" /><h3>gold_key_198</h3><p>Ключ нельзя взять сразу. После разговора с ежом он становится доступным и исчезает при подборе.</p></article>
+          <article class="recipe-card"><img class="diagram-shot" src="../all%20docs%20for%20project/gate_1_198.png" alt="Диаграмма gate_1_198" /><h3>gate_1_198</h3><p>Первые ворота показывают красный индикатор, пока нет ключа, и становятся проходимыми после условия.</p></article>
+          <article class="recipe-card"><img class="diagram-shot" src="../all%20docs%20for%20project/green_apple_198.png" alt="Диаграмма green_apple_198" /><h3>green_apple_198</h3><p>Полезный предмет. При подборе ставит переменную <code>has_apple</code> и удаляется со сцены.</p></article>
+          <article class="recipe-card"><img class="diagram-shot" src="../all%20docs%20for%20project/red_apple_198.png" alt="Диаграмма red_apple_198" /><h3>red_apple_198</h3><p>Ловушка. При взаимодействии вызывает поражение и показывает сюжетную реакцию.</p></article>
+          <article class="recipe-card"><img class="diagram-shot" src="../all%20docs%20for%20project/button_198.png" alt="Диаграмма button_198" /><h3>button_198</h3><p>Терминал с кнопкой. До кормления ежа отказывает, после — активирует финальные ворота.</p></article>
+          <article class="recipe-card"><img class="diagram-shot" src="../all%20docs%20for%20project/guard_198.png" alt="Диаграмма guard_198" /><h3>guard_198</h3><p>Робот Лиза проверяет этапы квеста: сначала отправляет к ежу, потом к кнопке, затем открывает финальный путь.</p></article>
+          <article class="recipe-card"><img class="diagram-shot" src="../all%20docs%20for%20project/gate_2_198.png" alt="Диаграмма gate_2_198" /><h3>gate_2_198</h3><p>Финальные ворота слушают переменную <code>gate_open</code> и открываются после сигнала Лизы.</p></article>
+          <article class="recipe-card"><img class="diagram-shot" src="../all%20docs%20for%20project/winpoint_198.png" alt="Диаграмма winpoint_198" /><h3>winpoint_198</h3><p>Победный флаг. Показывает подсказку и завершает игру победой при взаимодействии.</p></article>
+        </div>
+
+        <h2>Глобальные переменные</h2>
+        <table class="data-table">
+          <thead><tr><th>Переменная</th><th>Что значит</th></tr></thead>
+          <tbody>
+            <tr><td><code>know_key</code></td><td>Игрок поговорил с ежом и знает, где ключ.</td></tr>
+            <tr><td><code>has_key</code></td><td>Игрок подобрал золотой ключ.</td></tr>
+            <tr><td><code>has_apple</code></td><td>Игрок взял зеленое яблоко.</td></tr>
+            <tr><td><code>ezh_fed</code></td><td>Ёж накормлен и может поручиться за игрока.</td></tr>
+            <tr><td><code>btn_active</code></td><td>Красная кнопка нажата.</td></tr>
+            <tr><td><code>gate_open</code></td><td>Финальные ворота получили сигнал на открытие.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Что изучаем на этом примере</h2>
+        <ul class="task-list">
+          <li>Как ПРИМС-диаграммы разных объектов связываются через переменные.</li>
+          <li>Как цвет индикатора помогает игроку понимать состояние объекта.</li>
+          <li>Как предмет может исчезнуть после подбора.</li>
+          <li>Как ворота меняют проходимость.</li>
+          <li>Как диалог объясняет, почему игрок пока не может пройти дальше.</li>
+        </ul>
+
+        <h2>Задания</h2>
+        <ol class="task-list">
+          <li>Нарисуйте схему квестовой цепочки «Опасных яблок» без кода.</li>
+          <li>Выберите одну диаграмму и объясните ее однокласснику простыми словами.</li>
+          <li>Придумайте замену: вместо яблока, ключа и ворот используйте другие предметы, но сохраните такую же логику.</li>
+          <li>Добавьте один плохой финал и один хороший финал.</li>
+        </ol>
+
+        <div class="lesson-actions">
+          <a class="button" href="prims-recipes.html">Назад к рецептам</a>
+          <a class="button button--primary" href="../materials/index.html">Материалы курса</a>
+        </div>
+      </article>
+    </main>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

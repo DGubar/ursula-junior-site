@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Урок 3 | ПРИМС</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html">Урсула: 3D-игры</a>
+      <button class="menu-button" id="menuButton" type="button">Меню</button>
+      <nav class="site-nav" id="siteNav">
+        <a href="../index.html">Главная</a>
+        <a href="../learn/index.html">Уроки</a>
+        <a href="../materials/index.html">Материалы</a>
+      </nav>
+    </header>
+
+    <main class="lesson-layout">
+      <aside class="lesson-nav">
+        <span>Курс</span>
+        <a href="lesson-01.html">1. Урсула</a>
+        <a href="lesson-02.html">2. Объекты сцены</a>
+        <a class="active" href="lesson-03.html">3. ПРИМС</a>
+        <a href="prims-recipes.html">4. Рецепты</a>
+        <a href="dangerous-apples.html">5. Опасные яблоки</a>
+      </aside>
+
+      <article class="lesson-content">
+        <p class="eyebrow">Урок 3</p>
+        <h1>ПРИМС: состояния и переходы</h1>
+        <p class="lead">Цель урока: научиться читать простую диаграмму поведения интерактивного объекта или NPC.</p>
+
+        <img class="lesson-image" src="../assets/img/content-structure.svg" alt="Структура диаграммы ПРИМС" />
+
+        <h2>Как думать о диаграмме</h2>
+        <p>ПРИМС-диаграмма похожа на схему поведения персонажа. Прямоугольники — это состояния, стрелки — переходы между ними, а подписи на стрелках объясняют, какое событие запускает переход.</p>
+        <p>Внутри состояния часто есть блок <code>entry</code>. Это команды, которые выполняются при входе в состояние. Иногда есть <code>exit</code> — команды при выходе из состояния.</p>
+
+        <h2>Простой пример</h2>
+        <div class="code-card">
+          <pre><code>Состояние: Ожидание
+entry/
+МодульВыводаТекста.ПоказатьТекст("Привет!")
+
+Переход по событию:
+Таймер.ТаймерВыполнен</code></pre>
+        </div>
+
+        <h2>Главные слова</h2>
+        <ul class="task-list">
+          <li><strong>Состояние</strong> — что объект делает сейчас.</li>
+          <li><strong>Событие</strong> — что произошло: игрок нажал, таймер закончился, переменная изменилась.</li>
+          <li><strong>Действие</strong> — команда модулю: показать текст, открыть дверь, включить индикатор.</li>
+          <li><strong>Переменная</strong> — память игры: есть ли ключ, накормлен ли ёж, открыты ли ворота.</li>
+        </ul>
+
+        <h2>Задания</h2>
+        <ol class="task-list">
+          <li>Придумайте объект с двумя состояниями: например, «закрыто» и «открыто».</li>
+          <li>Запишите событие, которое переводит объект из первого состояния во второе.</li>
+          <li>Выберите действие, которое должно выполниться при переходе.</li>
+        </ol>
+
+        <div class="lesson-actions">
+          <a class="button" href="lesson-02.html">Предыдущий урок</a>
+          <a class="button button--primary" href="prims-recipes.html">К рецептам</a>
+        </div>
+      </article>
+    </main>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
