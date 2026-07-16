@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Рецепты ПРИМС | Урсула</title>
+    <title>12 мини-уроков ПРИМС | Урсула</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
@@ -23,200 +23,39 @@
         <a href="lesson-01.html">1. Урсула</a>
         <a href="lesson-02.html">2. Объекты сцены</a>
         <a href="lesson-03.html">3. ПРИМС</a>
-        <a class="active" href="prims-recipes.html">4. Рецепты</a>
+        <a class="active" href="prims-recipes.html">4. Мини-уроки</a>
         <a href="dangerous-apples.html">5. Опасные яблоки</a>
       </aside>
 
       <article class="lesson-content lesson-content--wide">
-        <p class="eyebrow">Практикум</p>
-        <h1>12 рецептов поведения NPC и объектов</h1>
-        <p class="lead">Каждый рецепт — маленькая диаграмма, которая показывает одну возможность ПРИМС. Их можно давать как отдельные задания или собрать из них свою мини-игру.</p>
+        <p class="eyebrow">Раздел 4</p>
+        <h1>12 мини-уроков ПРИМС</h1>
+        <p class="lead">В этом разделе ты соберёшь маленькие схемы поведения для NPC и интерактивных объектов: диалог, патруль, тревогу, дверь с ключом, подбор предметов и финал игры.</p>
 
-        <section class="visual-recipes" aria-label="Условные диаграммы ПРИМС">
-          <article class="visual-diagram">
-            <h2>1. Показать текст</h2>
-            <div class="diagram-row"><span class="state-box">Ожидание<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/show_text.png" alt="" /> ПоказатьТекст</small></span></div>
-          </article>
-          <article class="visual-diagram">
-            <h2>2. Подождать 3 секунды</h2>
-            <div class="diagram-row"><span class="state-box">Диалог<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/TimerStart.png" alt="" /> ТаймерЗапуск(3)</small></span><span class="arrow">ТаймерВыполнен</span><span class="state-box">Ожидание</span></div>
-          </article>
-          <article class="visual-diagram">
-            <h2>3. Случайная прогулка</h2>
-            <div class="diagram-row"><span class="state-box">Гуляю<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/setCoords.png" alt="" /> Случайная точка</small></span><span class="arrow">затем</span><span class="state-box"><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/MoveToCoord.png" alt="" /> Двигаться</small></span></div>
-          </article>
-          <article class="visual-diagram">
-            <h2>4. Найти игрока</h2>
-            <div class="diagram-row"><span class="state-box">Ищу<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/FindAllyByDistance.png" alt="" /> Радиус 15</small></span><span class="arrow">ИгрокОбнаружен</span><span class="state-box">Реакция</span></div>
-          </article>
-          <article class="visual-diagram">
-            <h2>5. Идти к игроку</h2>
-            <div class="diagram-row"><span class="state-box">Погоня<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/GoToTarget.png" alt="" /> К цели</small></span></div>
-          </article>
-          <article class="visual-diagram">
-            <h2>6. Потерять цель</h2>
-            <div class="diagram-row"><span class="state-box">Погоня</span><span class="arrow">ЦельПотеряна</span><span class="state-box">Домой<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/MoveToCoord.png" alt="" /> Вернуться</small></span></div>
-          </article>
-          <article class="visual-diagram">
-            <h2>7. Индикатор</h2>
-            <div class="diagram-row"><span class="state-box danger">Красный<br /><small>нельзя</small></span><span class="arrow">условие выполнено</span><span class="state-box success">Зеленый<br /><small>можно</small></span></div>
-          </article>
-          <article class="visual-diagram">
-            <h2>8. Звук</h2>
-            <div class="diagram-row"><span class="state-box">Тревога<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/playSound.png" alt="" /> ВоспроизвестиЗвук</small></span></div>
-          </article>
-          <article class="visual-diagram">
-            <h2>9. Открыть дверь</h2>
-            <div class="diagram-row"><span class="state-box danger">Закрыто</span><span class="arrow">has_key</span><span class="state-box success"><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/UstanovitProhodimost.png" alt="" /> Открыто</span></div>
-          </article>
-          <article class="visual-diagram">
-            <h2>10. Атаковать</h2>
-            <div class="diagram-row"><span class="state-box">Атака<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/HitAim.png" alt="" /> АтаковатьЦель</small></span></div>
-          </article>
-          <article class="visual-diagram">
-            <h2>11. Считать предметы</h2>
-            <div class="diagram-row"><span class="state-box">Подбор<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/СчетчикПрибавить.png" alt="" /> +1</small></span></div>
-          </article>
-          <article class="visual-diagram">
-            <h2>12. Финал</h2>
-            <div class="diagram-row"><span class="state-box success"><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/Победа.png" alt="" /> Победа</span><span class="arrow">или</span><span class="state-box danger"><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/Поражение.png" alt="" /> Поражение</span></div>
-          </article>
+        <section class="principle-card">
+          <h2>Как работать с мини-уроками</h2>
+          <p>Выбери один игровой эффект и разложи его на три вопроса: что объект делает сейчас, какое событие меняет его поведение, что игрок увидит после перехода.</p>
+          <p>Сначала прочитай пример, потом собери такую же схему в ПРИМС, а затем измени её под свою игру: поменяй условие, реплику, радиус, цвет, звук или финал.</p>
         </section>
 
         <section class="recipe-grid recipe-grid--two">
-          <article class="recipe-card">
-            <span class="recipe-number">1</span>
-            <h2>NPC стоит и показывает текст</h2>
-            <p><strong>Идея:</strong> персонаж приветствует игрока или дает подсказку.</p>
-            <div class="code-card"><pre><code>entry/
-МодульВыводаТекста.ПоказатьТекст("Привет! Найди ключ.")</code></pre></div>
-            <p><strong>Задание:</strong> придумайте реплику NPC, которая объясняет цель игры.</p>
-          </article>
-
-          <article class="recipe-card">
-            <span class="recipe-number">2</span>
-            <h2>NPC ждет 3 секунды и меняет состояние</h2>
-            <p><strong>Идея:</strong> после короткого сообщения персонаж возвращается в ожидание.</p>
-            <div class="code-card"><pre><code>entry/
-Таймер.ТаймерЗапуск(3)
-
-переход:
-Таймер.ТаймерВыполнен</code></pre></div>
-            <p><strong>Задание:</strong> сделайте состояние «Диалог» и возврат в «Ожидание».</p>
-          </article>
-
-          <article class="recipe-card">
-            <span class="recipe-number">3</span>
-            <h2>NPC ходит в случайную точку</h2>
-            <p><strong>Идея:</strong> персонаж выглядит живым и немного гуляет по локации.</p>
-            <div class="code-card"><pre><code>entry/
-МодульДвижения.ЗадатьСлучайныеКоординаты(10)
-МодульДвижения.ДвигатьсяПоКоординатам()</code></pre></div>
-            <p><strong>Задание:</strong> настройте радиус прогулки и проверьте, не выходит ли NPC за границы сцены.</p>
-          </article>
-
-          <article class="recipe-card">
-            <span class="recipe-number">4</span>
-            <h2>NPC ищет игрока в радиусе</h2>
-            <p><strong>Идея:</strong> охранник замечает игрока, если тот подошел близко.</p>
-            <div class="code-card"><pre><code>entry/
-МодульОбнаружения.ПоискИгрокаВРадиусе(15)
-
-переход:
-МодульОбнаружения.ИгрокОбнаружен</code></pre></div>
-            <p><strong>Задание:</strong> сравните радиусы 5, 15 и 30 метров.</p>
-          </article>
-
-          <article class="recipe-card">
-            <span class="recipe-number">5</span>
-            <h2>NPC идет к игроку</h2>
-            <p><strong>Идея:</strong> после обнаружения NPC начинает приближаться к цели.</p>
-            <div class="code-card"><pre><code>entry/
-МодульДвижения.ДвигатьсяКОбъекту()</code></pre></div>
-            <p><strong>Задание:</strong> сделайте два состояния: «Ищу» и «Иду к игроку».</p>
-          </article>
-
-          <article class="recipe-card">
-            <span class="recipe-number">6</span>
-            <h2>NPC теряет игрока и возвращается назад</h2>
-            <p><strong>Идея:</strong> если игрок убежал, NPC прекращает погоню.</p>
-            <div class="code-card"><pre><code>переход:
-АнализаторЦели.ЦельПотеряна
-
-entry/
-МодульДвижения.ВернутьсяНаИсходную()</code></pre></div>
-            <p><strong>Задание:</strong> добавьте состояние «Возвращаюсь».</p>
-          </article>
-
-          <article class="recipe-card">
-            <span class="recipe-number">7</span>
-            <h2>NPC включает зеленый или красный индикатор</h2>
-            <p><strong>Идея:</strong> цвет показывает, можно ли взаимодействовать с объектом.</p>
-            <div class="code-card"><pre><code>entry/
-МодульИндикации.УстановитьЦветИндикатора(Красный)
-МодульИндикации.ВключитьИндикатор()</code></pre></div>
-            <p><strong>Задание:</strong> красный — нельзя, синий — ждет игрока, зеленый — готово.</p>
-          </article>
-
-          <article class="recipe-card">
-            <span class="recipe-number">8</span>
-            <h2>NPC проигрывает звук</h2>
-            <p><strong>Идея:</strong> объект может издать сигнал, реплику или звук тревоги.</p>
-            <div class="code-card"><pre><code>entry/
-ВоспроизведениеЗвука.ВоспроизвестиЗвук("alarm", 20)</code></pre></div>
-            <p><strong>Задание:</strong> придумайте звук для ловушки или кнопки.</p>
-          </article>
-
-          <article class="recipe-card">
-            <span class="recipe-number">9</span>
-            <h2>NPC открывает дверь или активирует объект</h2>
-            <p><strong>Идея:</strong> дверь становится проходимой после выполнения условия.</p>
-            <div class="code-card"><pre><code>entry/
-МодульВзаимодействия.УстановитьПроходимость(True)
-МодульИндикации.ПоказатьСЦветом("зелёный")</code></pre></div>
-            <p><strong>Задание:</strong> сделайте ворота, которые открываются после переменной <code>has_key</code>.</p>
-          </article>
-
-          <article class="recipe-card">
-            <span class="recipe-number">10</span>
-            <h2>NPC атакует игрока или цель</h2>
-            <p><strong>Идея:</strong> враг атакует только если цель находится рядом.</p>
-            <div class="code-card"><pre><code>entry/
-МодульАтаки.АтаковатьЦель()
-
-переход:
-МодульАтаки.ЦельВышлаИзЗоны</code></pre></div>
-            <p><strong>Задание:</strong> добавьте переход из «Погоня» в «Атака».</p>
-          </article>
-
-          <article class="recipe-card">
-            <span class="recipe-number">11</span>
-            <h2>NPC считает собранные предметы</h2>
-            <p><strong>Идея:</strong> игра помнит, сколько предметов уже собрано.</p>
-            <div class="code-card"><pre><code>entry/
-Счётчик.ПрибавитьЗначение(1)
-
-или
-МодульПеременных.УстановитьЗначение(has_apple, true)</code></pre></div>
-            <p><strong>Задание:</strong> решите, что удобнее: счетчик или переменная true/false.</p>
-          </article>
-
-          <article class="recipe-card">
-            <span class="recipe-number">12</span>
-            <h2>Игра заканчивается победой или поражением</h2>
-            <p><strong>Идея:</strong> флаг дает победу, опасный предмет — поражение.</p>
-            <div class="code-card"><pre><code>entry/
-МодульПобедыИПоражения.Победа()
-
-или
-МодульПобедыИПоражения.Поражение()</code></pre></div>
-            <p><strong>Задание:</strong> сделайте два финала: хороший и плохой.</p>
-          </article>
+          <a class="recipe-card lesson-link-card" href="prims/01-dialog.html"><span class="recipe-number">1</span><h2>Диалог по взаимодействию</h2><p>NPC молчит, игрок подходит, запускается состояние диалога, текст закрывается — NPC снова ждёт.</p></a>
+          <a class="recipe-card lesson-link-card" href="prims/02-timer.html"><span class="recipe-number">2</span><h2>Таймер как источник событий</h2><p>Таймер создаёт событие, когда других событий нет: тики, паузы, задержки, перезарядка.</p></a>
+          <a class="recipe-card lesson-link-card" href="prims/03-random-patrol.html"><span class="recipe-number">3</span><h2>Неспешное патрулирование</h2><p>NPC выбирает точку, идёт к ней, делает паузу и выбирает следующую.</p></a>
+          <a class="recipe-card lesson-link-card" href="prims/04-detect-player.html"><span class="recipe-number">4</span><h2>Обнаружение игрока</h2><p>Охранник периодически проверяет радиус и переходит из спокойного состояния в тревогу.</p></a>
+          <a class="recipe-card lesson-link-card" href="prims/05-chase-player.html"><span class="recipe-number">5</span><h2>Погоня за целью</h2><p>После обнаружения NPC двигается к сохранённой цели и меняет состояние при сближении.</p></a>
+          <a class="recipe-card lesson-link-card" href="prims/06-lose-target.html"><span class="recipe-number">6</span><h2>Потеря цели и возврат</h2><p>Если цель исчезла, NPC прекращает погоню, возвращается домой и снова патрулирует.</p></a>
+          <a class="recipe-card lesson-link-card" href="prims/07-indicator.html"><span class="recipe-number">7</span><h2>Индикатор состояния</h2><p>Цвет показывает игроку, что объект закрыт, ждёт условия или готов к действию.</p></a>
+          <a class="recipe-card lesson-link-card" href="prims/08-sound-alert.html"><span class="recipe-number">8</span><h2>Звук как сигнал состояния</h2><p>Звук предупреждает, подтверждает действие, создаёт тревогу или даёт обратную связь.</p></a>
+          <a class="recipe-card lesson-link-card" href="prims/09-door-key.html"><span class="recipe-number">9</span><h2>Дверь, ключ и условие</h2><p>Проходимость меняется не сама по себе, а после события или переменной.</p></a>
+          <a class="recipe-card lesson-link-card" href="prims/10-attack.html"><span class="recipe-number">10</span><h2>Атака в зоне действия</h2><p>Враг атакует только в подходящем состоянии и возвращается к погоне, если цель ушла.</p></a>
+          <a class="recipe-card lesson-link-card" href="prims/11-collect-item.html"><span class="recipe-number">11</span><h2>Подбор предмета</h2><p>Предмет переходит из состояния «лежит» в «собран», меняет переменную и исчезает.</p></a>
+          <a class="recipe-card lesson-link-card" href="prims/12-finale.html"><span class="recipe-number">12</span><h2>Победа и поражение</h2><p>Финал — это не команда в пустоте, а переход игры в одно из завершающих состояний.</p></a>
         </section>
 
         <div class="lesson-actions">
           <a class="button" href="lesson-03.html">Назад к ПРИМС</a>
-          <a class="button button--primary" href="dangerous-apples.html">Разбор примера</a>
+          <a class="button button--primary" href="prims/01-dialog.html">Начать мини-уроки</a>
         </div>
       </article>
     </main>

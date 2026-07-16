@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ru">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Атака в зоне действия | ПРИМС</title><link rel="stylesheet" href="../../assets/css/style.css" /></head>
+  <body><header class="site-header"><a class="brand" href="../../index.html">Урсула: 3D-игры</a><button class="menu-button" id="menuButton" type="button">Меню</button><nav class="site-nav" id="siteNav"><a href="../../index.html">Главная</a><a href="../../learn/index.html">Уроки</a><a href="../../materials/index.html">Материалы</a></nav></header>
+    <main class="lesson-layout"><aside class="lesson-nav"><span>ПРИМС</span><a href="../prims-recipes.html">Все мини-уроки</a><a href="09-door-key.html">9. Дверь</a><a class="active" href="10-attack.html">10. Атака</a><a href="11-collect-item.html">11. Предмет</a></aside><article class="lesson-content lesson-content--wide">
+      <p class="eyebrow">Мини-урок 10</p><h1>Атака в зоне действия</h1><p class="lead">Атака должна происходить только тогда, когда цель действительно рядом и NPC находится в подходящем состоянии.</p>
+      <section class="principle-card"><h2>Коротко</h2><p><code>Атака</code> — это отдельное состояние. В него нельзя переходить просто потому, что враг существует; нужна цель и условие дистанции.</p></section>
+      <h2>Подробно</h2><p>Если враг атакует без проверки зоны, игрок не понимает правил. Машина состояний делает поведение честным: сначала обнаружение, потом погоня, потом атака. Если цель вышла из зоны, враг возвращается к погоне.</p>
+      <h2>Геймдизайн-идеи</h2><ul class="task-list"><li>Робот бьёт только в ближнем бою.</li><li>Турель стреляет, если цель в зоне.</li><li>Монстр делает замах перед ударом.</li><li>Босс чередует погоню и атаку.</li><li>Ловушка наносит урон при входе в радиус.</li></ul>
+      <h2>Учебный рецепт</h2><div class="diagram-row"><span class="state-box">Погоня</span><span class="arrow">цель вошла в зону</span><span class="state-box danger">Атака<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/HitAim.png" alt="" /> удар</small></span><span class="return-arrow">цель вышла из зоны: назад в «Погоня»</span></div>
+      <ul class="transition-list"><li>Не заводите вторую <code>Погоню</code> после атаки. Это возврат к уже определённому состоянию.</li><li>Добавьте задержку перед ударом, если хотите дать игроку шанс отойти.</li><li>Проверьте радиус атаки на разных скоростях игрока.</li></ul>
+      <div class="lesson-actions"><a class="button" href="09-door-key.html">Предыдущий урок</a><a class="button button--primary" href="11-collect-item.html">Следующий урок</a></div>
+    </article></main><script src="../../assets/js/main.js"></script></body>
+</html>

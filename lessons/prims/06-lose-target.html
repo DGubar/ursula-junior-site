@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ru">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Потеря цели и возврат | ПРИМС</title><link rel="stylesheet" href="../../assets/css/style.css" /></head>
+  <body><header class="site-header"><a class="brand" href="../../index.html">Урсула: 3D-игры</a><button class="menu-button" id="menuButton" type="button">Меню</button><nav class="site-nav" id="siteNav"><a href="../../index.html">Главная</a><a href="../../learn/index.html">Уроки</a><a href="../../materials/index.html">Материалы</a></nav></header>
+    <main class="lesson-layout"><aside class="lesson-nav"><span>ПРИМС</span><a href="../prims-recipes.html">Все мини-уроки</a><a href="05-chase-player.html">5. Погоня</a><a class="active" href="06-lose-target.html">6. Потеря цели</a><a href="07-indicator.html">7. Индикатор</a></aside><article class="lesson-content lesson-content--wide">
+      <p class="eyebrow">Мини-урок 6</p><h1>Потеря цели и возврат</h1><p class="lead">Хороший NPC умеет не только начинать погоню, но и прекращать её понятным способом.</p>
+      <section class="principle-card"><h2>Коротко</h2><p>Событие <code>ЦельПотеряна</code> переводит NPC из <code>Погоня</code> в <code>Возвращаюсь</code>. После прибытия он снова становится спокойным.</p></section>
+      <h2>Подробно</h2><p>Если не описать потерю цели, NPC может застрять в странном поведении: бежать в пустоту, стоять посреди сцены или атаковать невидимого игрока. Возврат закрывает цикл поведения и делает врага предсказуемым.</p>
+      <h2>Геймдизайн-идеи</h2><ul class="task-list"><li>Охранник возвращается на пост.</li><li>Монстр перестаёт преследовать игрока за пределами территории.</li><li>Союзник возвращается к базе после помощи.</li><li>Питомец возвращается к хозяину.</li><li>Робот после ошибки едет к зарядке.</li></ul>
+      <h2>Учебный рецепт</h2><div class="diagram-row"><span class="state-box">Погоня</span><span class="arrow">ЦельПотеряна</span><span class="state-box">Возвращаюсь<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/MoveToCoord.png" alt="" /> домой</small></span><span class="arrow">дошёл</span><span class="state-box">Патруль</span></div>
+      <ul class="transition-list"><li>Сохраните исходную точку до начала патруля.</li><li>Проверьте, что после возврата NPC снова может обнаружить игрока.</li></ul>
+      <div class="lesson-actions"><a class="button" href="05-chase-player.html">Предыдущий урок</a><a class="button button--primary" href="07-indicator.html">Следующий урок</a></div>
+    </article></main><script src="../../assets/js/main.js"></script></body>
+</html>

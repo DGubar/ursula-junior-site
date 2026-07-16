@@ -216,8 +216,47 @@ button {
   background: #ffffff;
 }
 
+.principle-card {
+  margin: 24px 0;
+  border: 1px solid #b8c8ee;
+  border-radius: 22px;
+  padding: 24px;
+  background: linear-gradient(135deg, #eef4ff, #fff8ea);
+}
+
+.state-recipes .recipe-card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.transition-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.transition-list li + li {
+  margin-top: 6px;
+}
+
+.state-recipes .diagram-row,
+.lesson-content--wide .diagram-row + .diagram-row {
+  margin-top: 12px;
+}
+
 .recipe-card h2 {
   font-size: 1.25rem;
+}
+
+.lesson-link-card {
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.lesson-link-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
 }
 
 .recipe-number {
@@ -327,8 +366,18 @@ button {
   font-weight: 900;
 }
 
+.return-arrow {
+  color: var(--primary-dark);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
 .arrow::after {
   content: " →";
+}
+
+.return-arrow::before {
+  content: "↺ ";
 }
 
 .diagram-shot {

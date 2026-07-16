@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Диалог по взаимодействию | ПРИМС</title><link rel="stylesheet" href="../../assets/css/style.css" /></head>
+  <body>
+    <header class="site-header"><a class="brand" href="../../index.html">Урсула: 3D-игры</a><button class="menu-button" id="menuButton" type="button">Меню</button><nav class="site-nav" id="siteNav"><a href="../../index.html">Главная</a><a href="../../learn/index.html">Уроки</a><a href="../../materials/index.html">Материалы</a></nav></header>
+    <main class="lesson-layout">
+      <aside class="lesson-nav"><span>ПРИМС</span><a href="../prims-recipes.html">Все мини-уроки</a><a class="active" href="01-dialog.html">1. Диалог</a><a href="02-timer.html">2. Таймер</a><a href="03-random-patrol.html">3. Патруль</a><a href="../dangerous-apples.html">Опасные яблоки</a></aside>
+      <article class="lesson-content lesson-content--wide">
+        <p class="eyebrow">Мини-урок 1</p><h1>Диалог по взаимодействию</h1>
+        <p class="lead">NPC показывает текст не «просто так», а после события: игрок подошёл и начал взаимодействие.</p>
+        <section class="principle-card"><h2>Коротко</h2><p>Диалог — это переход из спокойного состояния в состояние разговора. Текст показывается при входе в состояние <code>Диалог</code>, а затем объект возвращается в <code>Ожидание</code>.</p></section>
+        <h2>Подробно</h2><p>У NPC есть хотя бы два состояния. В <code>Ожидание</code> он молчит и ждёт игрока. Событие взаимодействия переводит его в <code>Диалог</code>. Внутри этого состояния срабатывает действие <code>ПоказатьТекст</code>. Когда текст закрыт, диалог закончился или прошёл заданный сценарный шаг, NPC снова ждёт.</p>
+        <h2>Геймдизайн-идеи</h2><ul class="task-list"><li>Персонаж даёт подсказку, где искать ключ.</li><li>NPC объясняет правило уровня только при первом разговоре.</li><li>Охранник отказывает игроку, пока условие не выполнено.</li><li>Торговец меняет реплику после завершения квеста.</li><li>Объект показывает короткую инструкцию при осмотре.</li></ul>
+        <h2>Учебный рецепт</h2><div class="diagram-row"><span class="state-box">Ожидание<br /><small>NPC молчит</small></span><span class="arrow">игрок взаимодействует</span><span class="state-box">Диалог<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/show_text.png" alt="" /> ПоказатьТекст</small></span><span class="return-arrow">текст закрыт: назад в «Ожидание»</span></div>
+        <ul class="transition-list"><li>Не создавайте второе состояние <code>Ожидание</code>. После диалога объект возвращается в уже существующее состояние.</li><li>Сделайте две реплики: первая до получения ключа, вторая после.</li><li>Проверьте, что текст появляется только после взаимодействия, а не при старте сцены.</li></ul>
+        <div class="lesson-actions"><a class="button" href="../prims-recipes.html">К оглавлению</a><a class="button button--primary" href="02-timer.html">Следующий урок</a></div>
+      </article>
+    </main><script src="../../assets/js/main.js"></script>
+  </body>
+</html>

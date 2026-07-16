@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ru">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Дверь, ключ и условие | ПРИМС</title><link rel="stylesheet" href="../../assets/css/style.css" /></head>
+  <body><header class="site-header"><a class="brand" href="../../index.html">Урсула: 3D-игры</a><button class="menu-button" id="menuButton" type="button">Меню</button><nav class="site-nav" id="siteNav"><a href="../../index.html">Главная</a><a href="../../learn/index.html">Уроки</a><a href="../../materials/index.html">Материалы</a></nav></header>
+    <main class="lesson-layout"><aside class="lesson-nav"><span>ПРИМС</span><a href="../prims-recipes.html">Все мини-уроки</a><a href="08-sound-alert.html">8. Звук</a><a class="active" href="09-door-key.html">9. Дверь</a><a href="10-attack.html">10. Атака</a></aside><article class="lesson-content lesson-content--wide">
+      <p class="eyebrow">Мини-урок 9</p><h1>Дверь, ключ и условие</h1><p class="lead">Дверь открывается не потому, что мы вызвали команду, а потому что игровое условие стало истинным.</p>
+      <section class="principle-card"><h2>Коротко</h2><p>Состояние двери зависит от переменной или события. Если <code>has_key = true</code>, дверь переходит из <code>Закрыта</code> в <code>Открыта</code>.</p></section>
+      <h2>Подробно</h2><p>Ключ, кнопка, NPC-разрешение или выполненный квест меняют состояние мира. Дверь должна либо следить за переменной, либо получать событие от другого объекта. При входе в состояние <code>Открыта</code> меняется проходимость и визуальная подсказка.</p>
+      <h2>Геймдизайн-идеи</h2><ul class="task-list"><li>Ворота открываются после ключа.</li><li>Мост появляется после нажатия кнопки.</li><li>Лазер выключается после взлома терминала.</li><li>NPC открывает проход после диалога.</li><li>Дверь закрывается снова через таймер.</li></ul>
+      <h2>Учебный рецепт</h2><div class="diagram-row"><span class="state-box danger">Закрыта<br /><small>непроходима</small></span><span class="arrow">has_key = true</span><span class="state-box success">Открыта<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/UstanovitProhodimost.png" alt="" /> проходима</small></span></div>
+      <ul class="transition-list"><li>Добавьте состояние <code>Отказ</code>, если игрок взаимодействует без ключа.</li><li>Покажите игроку, почему дверь пока не открылась.</li></ul>
+      <div class="lesson-actions"><a class="button" href="08-sound-alert.html">Предыдущий урок</a><a class="button button--primary" href="10-attack.html">Следующий урок</a></div>
+    </article></main><script src="../../assets/js/main.js"></script></body>
+</html>

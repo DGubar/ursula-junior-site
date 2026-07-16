@@ -94,6 +94,9 @@ Key variables:
 - Real diagrams are shown as screenshots.
 - Recipe diagrams are represented as HTML/CSS visual diagrams with module icons where possible.
 - The visual style should stay calm and clear, without overloaded UI.
+- ПРИМС recipes must be modeled as state machines: each recipe needs explicit states, events/triggers, optional conditions, actions inside states/transitions, and named transitions. Do not present a module call or entry action as if it were a complete behavior diagram.
+- The old single page of 12 short ПРИМС recipes was replaced by an index plus 12 mini-lessons under `lessons/prims/`. Each mini-lesson should include a short explanation, a deeper explanation, multiple game-design use cases, and one concrete teaching recipe with a state diagram.
+- When a behavior returns to an already defined state, show it as a return transition, not as a duplicated state box. A state is a stable mode of behavior, not a sequential instruction step.
 
 ## Repository And GitHub
 

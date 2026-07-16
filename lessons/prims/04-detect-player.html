@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ru">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Обнаружение игрока | ПРИМС</title><link rel="stylesheet" href="../../assets/css/style.css" /></head>
+  <body><header class="site-header"><a class="brand" href="../../index.html">Урсула: 3D-игры</a><button class="menu-button" id="menuButton" type="button">Меню</button><nav class="site-nav" id="siteNav"><a href="../../index.html">Главная</a><a href="../../learn/index.html">Уроки</a><a href="../../materials/index.html">Материалы</a></nav></header>
+    <main class="lesson-layout"><aside class="lesson-nav"><span>ПРИМС</span><a href="../prims-recipes.html">Все мини-уроки</a><a href="03-random-patrol.html">3. Патруль</a><a class="active" href="04-detect-player.html">4. Обнаружение</a><a href="05-chase-player.html">5. Погоня</a></aside><article class="lesson-content lesson-content--wide">
+      <p class="eyebrow">Мини-урок 4</p><h1>Обнаружение игрока</h1><p class="lead">Обнаружение переводит NPC из обычного поведения в реакцию: тревогу, диалог, погоню или прятки.</p>
+      <section class="principle-card"><h2>Коротко</h2><p>Состояние <code>Патруль</code> периодически или постоянно запускает поиск. Событие <code>ИгрокОбнаружен</code> переводит NPC в новое состояние.</p></section>
+      <h2>Подробно</h2><p>Поиск сам по себе не является поведением. Он нужен, чтобы получить событие. После события важно сохранить смысл: кого нашли, что с этим делать, как игрок увидит реакцию. Поэтому после обнаружения обычно идёт <code>Тревога</code>, <code>Диалог</code> или <code>Погоня</code>.</p>
+      <h2>Геймдизайн-идеи</h2><ul class="task-list"><li>Охранник замечает нарушителя.</li><li>NPC приветствует игрока, когда тот подошёл близко.</li><li>Монстр просыпается, если игрок вошёл в радиус.</li><li>Секретный объект подсвечивается, когда игрок рядом.</li><li>Животное убегает от игрока вместо атаки.</li></ul>
+      <h2>Учебный рецепт</h2><div class="diagram-row"><span class="state-box">Патруль<br /><small><img src="https://games.kruzhok.org/cyberiada-graphml/bearloga/icon/FindAllyByDistance.png" alt="" /> радиус 15</small></span><span class="arrow">ИгрокОбнаружен</span><span class="state-box danger">Тревога<br /><small>цель сохранена</small></span></div>
+      <ul class="transition-list"><li>Если игрок не найден, NPC остаётся в патруле.</li><li>Сравните радиусы 5, 15 и 30: где игра становится слишком простой или слишком сложной?</li></ul>
+      <div class="lesson-actions"><a class="button" href="03-random-patrol.html">Предыдущий урок</a><a class="button button--primary" href="05-chase-player.html">Следующий урок</a></div>
+    </article></main><script src="../../assets/js/main.js"></script></body>
+</html>
